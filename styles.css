@@ -17,6 +17,8 @@ html {
     scroll-behavior: smooth;
 }
 
+/* R3: Contenedor central con max-width definido, unidades relativas y
+   grid-template-areas en 1 sola columna para la vista móvil base */
 body {
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 1rem;
@@ -24,56 +26,47 @@ body {
     color: #1e293b;
     background-color: #f8fafc;
     min-height: 100vh;
-    padding: 0 4vw;
+    width: 100%;
+    max-width: 75rem; /* 1200px en rem */
+    margin: 0 auto;
+    padding: 1rem 4vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "cabecera"
+        "menu"
+        "principal"
+        "pie";
+    gap: 1.25rem;
 }
 
-/* R3: Contenedor central con max-width definido y centrado mediante márgenes automáticos */
-header,
-main,
+/* Asignación de nombres de área (grid-area) para los bloques principales */
+header {
+    grid-area: cabecera;
+}
+
+nav {
+    grid-area: menu;
+}
+
+main {
+    grid-area: principal;
+}
+
 footer {
-    width: 100%;
-    max-width: 75rem; /* 1200px equivalente en unidades relativas */
-    margin: 0 auto;
+    grid-area: pie;
 }
 
 /* ==========================================================================
-   Encabezado y Menú de Navegación (Base Móvil: Apilado Vertical)
+   Encabezado y Menú de Navegación (Base Móvil: 1 Columna)
    ========================================================================== */
 
 header {
     background-color: #0f172a;
     color: #f8fafc;
     padding: 1.5rem 5%;
-    border-radius: 0 0 0.75rem 0.75rem;
-    margin-bottom: 2rem;
+    border-radius: 0.75rem;
     text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-    padding: 0;
-}
-
-nav a {
-    display: block;
-    text-decoration: none;
-    color: #e2e8f0;
-    background-color: #1e293b;
-    padding: 0.65rem 1rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-nav a:hover,
-nav a:focus {
-    background-color: #38bdf8;
-    color: #0f172a;
 }
 
 header h1 {
@@ -104,6 +97,7 @@ address ul {
 address a {
     color: #93c5fd;
     text-decoration: none;
+    word-break: break-word;
 }
 
 address a:hover,
@@ -112,15 +106,71 @@ address a:focus {
     color: #ffffff;
 }
 
+nav {
+    background-color: #0f172a;
+    padding: 1rem 5%;
+    border-radius: 0.75rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #e2e8f0;
+    background-color: #1e293b;
+    padding: 0.65rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
 /* ==========================================================================
-   Contenido Principal y Secciones
+   Contenido Principal y Secciones (Base Móvil: 1 Columna)
    ========================================================================== */
 
 main {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding-bottom: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+main:has(#perfil) {
+    grid-template-areas:
+        "perfil"
+        "experiencia"
+        "educacion"
+        "habilidades";
+}
+
+#perfil {
+    grid-area: perfil;
+}
+
+#experiencia {
+    grid-area: experiencia;
+}
+
+#educacion {
+    grid-area: educacion;
+}
+
+#habilidades {
+    grid-area: habilidades;
 }
 
 section {
@@ -171,7 +221,6 @@ main > .proyectos {
     gap: 1rem;
 }
 
-/* Estilo de tarjetas automáticas para cada habilidad y cada proyecto/artículo */
 #habilidades li,
 article {
     background-color: #f1f5f9;
@@ -221,41 +270,84 @@ footer {
 }
 
 /* ==========================================================================
-   R6: Media Queries para pantallas mayores (Tablet y Escritorio - Mobile First)
+   R6: Media Queries con reorganización de grid-template-areas en múltiples columnas
    ========================================================================== */
 
-@media (min-width: 48rem) {
+/* Vista Tablet (600px): Reorganización a 2 columnas (menú lateral + contenido principal) */
+@media (min-width: 600px) {
     body {
-        padding: 0 5vw;
-    }
-
-    header {
-        padding: 2rem 6%;
-    }
-
-    nav ul {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1.25rem;
-    }
-
-    nav a {
-        padding: 0.6rem 1.5rem;
+        padding: 1.5rem 4vw;
+        grid-template-columns: 13rem 1fr;
+        grid-template-areas:
+            "cabecera cabecera"
+            "menu     principal"
+            "pie      pie";
+        align-items: start;
     }
 
     header h1 {
-        font-size: 2.4rem;
+        font-size: 2.1rem;
     }
 
     address ul {
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 
-    section {
-        padding: 2rem 4%;
+    nav {
+        position: sticky;
+        top: 1.5rem;
     }
 }
 
+/* Vista Escritorio (1024px): Reorganización a 3 columnas (cabecera lateral + menú superior + principal en 2 columnas) */
+@media (min-width: 1024px) {
+    body {
+        padding: 2rem 5vw;
+        grid-template-columns: 20rem 1fr 1fr;
+        grid-template-areas:
+            "cabecera menu      menu"
+            "cabecera principal principal"
+            "pie      pie       pie";
+        gap: 1.75rem;
+        align-items: start;
+    }
+
+    header {
+        text-align: left;
+        padding: 2rem 1.5rem;
+        position: sticky;
+        top: 2rem;
+    }
+
+    address ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.65rem;
+    }
+
+    nav {
+        position: static;
+        padding: 1rem 1.5rem;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 1rem;
+    }
+
+    nav a {
+        padding: 0.6rem 1.5rem;
+    }
+
+    main:has(#perfil) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "perfil      perfil"
+            "experiencia educacion"
+            "habilidades habilidades";
+    }
+}
