@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 620" width="900" height="620" font-family="monospace, sans-serif">
+  <!-- Contenedor Computador -->
+  <rect x="5" y="5" width="890" height="610" rx="12" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+  <text x="450" y="32" text-anchor="middle" font-size="16" font-weight="bold" fill="#0f172a">WIREFRAME: INICIO - COMPUTADOR (3 Columnas: "cabecera menu menu" / "cabecera principal principal")</text>
+
+  <!-- Área: cabecera (Columna izquierda lateral) -->
+  <rect x="25" y="50" width="240" height="475" rx="8" fill="#e2e8f0" stroke="#475569" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="145" y="80" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">grid-area: cabecera</text>
+  <text x="145" y="98" text-anchor="middle" font-size="12" fill="#334155">(&lt;header&gt;)</text>
+  <rect x="45" y="118" width="200" height="50" rx="6" fill="#cbd5e1" stroke="#64748b"/>
+  <text x="145" y="140" text-anchor="middle" font-size="12" font-weight="bold" fill="#0f172a">JESUS PEREZ</text>
+  <text x="145" y="157" text-anchor="middle" font-size="11" fill="#1e293b">Desarrollador junior</text>
+  <rect x="45" y="185" width="200" height="120" rx="6" fill="#cbd5e1" stroke="#64748b"/>
+  <text x="145" y="212" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">&lt;address&gt;</text>
+  <text x="145" y="235" text-anchor="middle" font-size="11" fill="#334155">- Correo electrónico</text>
+  <text x="145" y="255" text-anchor="middle" font-size="11" fill="#334155">- LinkedIn</text>
+  <text x="145" y="275" text-anchor="middle" font-size="11" fill="#334155">- GitHub</text>
+
+  <!-- Área: menu (Fila superior derecha, abarca 2 columnas) -->
+  <rect x="285" y="50" width="590" height="75" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="415" y="92" text-anchor="middle" font-size="14" font-weight="bold" fill="#0369a1">grid-area: menu (&lt;nav&gt;)</text>
+  <rect x="545" y="68" width="95" height="36" rx="4" fill="#bae6fd" stroke="#0284c7"/>
+  <text x="592" y="90" text-anchor="middle" font-size="11" fill="#0c4a6e">Inicio</text>
+  <rect x="650" y="68" width="100" height="36" rx="4" fill="#bae6fd" stroke="#0284c7"/>
+  <text x="700" y="90" text-anchor="middle" font-size="11" fill="#0c4a6e">Proyecto 1</text>
+  <rect x="760" y="68" width="100" height="36" rx="4" fill="#bae6fd" stroke="#0284c7"/>
+  <text x="810" y="90" text-anchor="middle" font-size="11" fill="#0c4a6e">Proyecto 2</text>
+
+  <!-- Área: principal (Abarca 2 columnas a la derecha) -->
+  <rect x="285" y="140" width="590" height="385" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="580" y="166" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">grid-area: principal (&lt;main&gt;)</text>
+
+  <!-- Sub-área: perfil (2 columnas completas dentro de main) -->
+  <rect x="305" y="180" width="550" height="75" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text x="580" y="203" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">grid-area: perfil (#perfil)</text>
+  <line x1="330" y1="222" x2="830" y2="222" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="330" y1="238" x2="750" y2="238" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Sub-área: experiencia (Columna 1 de main) -->
+  <rect x="305" y="270" width="265" height="115" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text x="437" y="294" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">grid-area: experiencia</text>
+  <rect x="320" y="308" width="112" height="60" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="376" y="342" text-anchor="middle" font-size="10" fill="#334155">Pragma</text>
+  <rect x="442" y="308" width="112" height="60" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="498" y="342" text-anchor="middle" font-size="10" fill="#334155">Hacienda S.M.</text>
+
+  <!-- Sub-área: educacion (Columna 2 de main) -->
+  <rect x="590" y="270" width="265" height="115" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text x="722" y="294" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">grid-area: educacion</text>
+  <rect x="605" y="308" width="112" height="60" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="661" y="342" text-anchor="middle" font-size="10" fill="#334155">UNIMINUTO</text>
+  <rect x="727" y="308" width="112" height="60" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="783" y="342" text-anchor="middle" font-size="10" fill="#334155">SENA</text>
+
+  <!-- Sub-área: habilidades (2 columnas completas dentro de main con auto-fit cards) -->
+  <rect x="305" y="400" width="550" height="110" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text x="580" y="424" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">grid-area: habilidades — repeat(auto-fit, minmax(250px, 1fr))</text>
+  <rect x="325" y="440" width="160" height="50" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="405" y="470" text-anchor="middle" font-size="11" fill="#334155">Tarjeta Habilidad 1</text>
+  <rect x="500" y="440" width="160" height="50" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="580" y="470" text-anchor="middle" font-size="11" fill="#334155">Tarjeta Habilidad 2</text>
+  <rect x="675" y="440" width="160" height="50" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="755" y="470" text-anchor="middle" font-size="11" fill="#334155">Tarjeta Habilidad 3</text>
+
+  <!-- Área: pie (Abarca las 3 columnas inferiores: "pie pie pie") -->
+  <rect x="25" y="540" width="850" height="55" rx="8" fill="#e2e8f0" stroke="#475569" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="450" y="566" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">grid-area: pie (&lt;footer&gt; - "pie pie pie")</text>
+  <text x="450" y="584" text-anchor="middle" font-size="11" fill="#475569">&copy; 2026 JESUS PEREZ. Todos los derechos reservados.</text>
+</svg>
+

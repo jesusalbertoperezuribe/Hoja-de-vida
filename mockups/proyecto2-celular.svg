@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 780" width="380" height="780" font-family="monospace, sans-serif">
+  <!-- Fondo del dispositivo móvil -->
+  <rect x="5" y="5" width="370" height="770" rx="20" fill="#f8fafc" stroke="#334155" stroke-width="3"/>
+  <text x="190" y="32" text-anchor="middle" font-size="14" font-weight="bold" fill="#0f172a">WIREFRAME: PROYECTO 2 - CELULAR (1 Columna)</text>
+
+  <!-- Área: cabecera -->
+  <rect x="25" y="48" width="330" height="95" rx="8" fill="#e2e8f0" stroke="#475569" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="190" y="75" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">grid-area: cabecera (&lt;header&gt;)</text>
+  <rect x="45" y="88" width="290" height="38" rx="4" fill="#cbd5e1" stroke="#64748b"/>
+  <text x="190" y="112" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Título: Proyecto 2</text>
+
+  <!-- Área: menu -->
+  <rect x="25" y="158" width="330" height="115" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="190" y="182" text-anchor="middle" font-size="15" font-weight="bold" fill="#0369a1">grid-area: menu (&lt;nav&gt;)</text>
+  <rect x="55" y="192" width="270" height="20" rx="4" fill="#bae6fd" stroke="#0284c7"/>
+  <text x="190" y="206" text-anchor="middle" font-size="11" fill="#0c4a6e">[ Inicio ]</text>
+  <rect x="55" y="218" width="270" height="20" rx="4" fill="#bae6fd" stroke="#0284c7"/>
+  <text x="190" y="232" text-anchor="middle" font-size="11" fill="#0c4a6e">[ Proyecto 1 ]</text>
+  <rect x="55" y="244" width="270" height="20" rx="4" fill="#bae6fd" stroke="#0284c7"/>
+  <text x="190" y="258" text-anchor="middle" font-size="11" fill="#0c4a6e">[ Proyecto 2 ]</text>
+
+  <!-- Área: principal -->
+  <rect x="25" y="288" width="330" height="395" rx="8" fill="#f1f5f9" stroke="#475569" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="190" y="314" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">grid-area: principal (&lt;main&gt;)</text>
+
+  <!-- Imagen del Proyecto 2 -->
+  <rect x="45" y="330" width="290" height="140" rx="6" fill="#e2e8f0" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="45" y1="330" x2="335" y2="470" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="335" y1="330" x2="45" y2="470" stroke="#94a3b8" stroke-width="1.5"/>
+  <rect x="95" y="382" width="190" height="34" rx="4" fill="#f8fafc" stroke="#64748b"/>
+  <text x="190" y="403" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">Imagen (max-width: 100%)</text>
+
+  <!-- Descripción del Proyecto 2 -->
+  <rect x="45" y="485" width="290" height="85" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text x="190" y="508" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Descripción del Proyecto 2</text>
+  <line x1="65" y1="526" x2="315" y2="526" stroke="#94a3b8" stroke-width="2"/>
+  <line x1="65" y1="542" x2="295" y2="542" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Tarjetas de Características / Tecnologías -->
+  <rect x="45" y="582" width="290" height="82" rx="6" fill="#ffffff" stroke="#64748b" stroke-width="1.5"/>
+  <text x="190" y="605" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Tarjetas Proyecto 2 (1 col)</text>
+  <rect x="65" y="616" width="250" height="34" rx="4" fill="#e2e8f0" stroke="#94a3b8"/>
+  <text x="190" y="638" text-anchor="middle" font-size="11" fill="#334155">repeat(auto-fit, minmax(250px, 1fr))</text>
+
+  <!-- Área: pie -->
+  <rect x="25" y="700" width="330" height="55" rx="8" fill="#e2e8f0" stroke="#475569" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="190" y="724" text-anchor="middle" font-size="15" font-weight="bold" fill="#0f172a">grid-area: pie (&lt;footer&gt;)</text>
+  <text x="190" y="743" text-anchor="middle" font-size="11" fill="#475569">Copyright / Derechos reservados</text>
+</svg>
+
