@@ -1,0 +1,261 @@
+/* ==========================================================================
+   R1: Diseño estrictamente Mobile First (Estilos base para dispositivos móviles)
+   Sin uso de la declaración !important en todo el documento.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* R2: Uso de unidades relativas (rem, %, vw) para tipografía, espaciados y dimensiones */
+html {
+    font-size: 100%; /* 1rem = 16px base */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #1e293b;
+    background-color: #f8fafc;
+    min-height: 100vh;
+    padding: 0 4vw;
+}
+
+/* R3: Contenedor central con max-width definido y centrado mediante márgenes automáticos */
+header,
+main,
+footer {
+    width: 100%;
+    max-width: 75rem; /* 1200px equivalente en unidades relativas */
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   Encabezado y Menú de Navegación (Base Móvil: Apilado Vertical)
+   ========================================================================== */
+
+header {
+    background-color: #0f172a;
+    color: #f8fafc;
+    padding: 1.5rem 5%;
+    border-radius: 0 0 0.75rem 0.75rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding: 0;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: #e2e8f0;
+    background-color: #1e293b;
+    padding: 0.65rem 1rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: #38bdf8;
+    color: #0f172a;
+}
+
+header h1 {
+    font-size: 1.85rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 0.25rem;
+}
+
+header p {
+    font-size: 1.1rem;
+    color: #38bdf8;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+address {
+    font-style: normal;
+}
+
+address ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+}
+
+address a {
+    color: #93c5fd;
+    text-decoration: none;
+}
+
+address a:hover,
+address a:focus {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   Contenido Principal y Secciones
+   ========================================================================== */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-bottom: 2.5rem;
+}
+
+section {
+    background-color: #ffffff;
+    padding: 1.5rem 5%;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.125rem 0.5rem rgba(15, 23, 42, 0.06);
+}
+
+h2 {
+    font-size: 1.35rem;
+    color: #0f172a;
+    border-bottom: 0.15rem solid #38bdf8;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+h3 {
+    font-size: 1.1rem;
+    color: #1e293b;
+    margin-bottom: 0.35rem;
+}
+
+/* ==========================================================================
+   R4: Imágenes adaptables (Responsive Images) con max-width: 100%
+   ========================================================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+    margin: 1rem auto;
+}
+
+/* ==========================================================================
+   R5: CSS Grid con tarjetas automáticas repeat(auto-fit, minmax(250px, 1fr))
+   Aplicado a la sección de Habilidades y contenedores de Proyectos/Tarjetas
+   ========================================================================== */
+
+#habilidades ul,
+.proyectos-grid,
+#proyectos,
+main > .proyectos {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+/* Estilo de tarjetas automáticas para cada habilidad y cada proyecto/artículo */
+#habilidades li,
+article {
+    background-color: #f1f5f9;
+    border: 0.0625rem solid #e2e8f0;
+    border-left: 0.25rem solid #0284c7;
+    border-radius: 0.5rem;
+    padding: 1rem 1.25rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#habilidades li {
+    font-weight: 600;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+}
+
+#habilidades li:hover,
+article:hover {
+    transform: translateY(-0.15rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(15, 23, 42, 0.1);
+}
+
+#experiencia,
+#educacion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+#experiencia h2,
+#educacion h2,
+#proyectos h2 {
+    grid-column: 1 / -1;
+}
+
+/* ==========================================================================
+   Pie de Página
+   ========================================================================== */
+
+footer {
+    text-align: center;
+    padding: 1.5rem 5%;
+    color: #64748b;
+    font-size: 0.9rem;
+    border-top: 0.0625rem solid #e2e8f0;
+}
+
+/* ==========================================================================
+   R6: Media Queries para pantallas mayores (Tablet y Escritorio - Mobile First)
+   ========================================================================== */
+
+@media (min-width: 48rem) {
+    body {
+        padding: 0 5vw;
+    }
+
+    header {
+        padding: 2rem 6%;
+    }
+
+    nav ul {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.25rem;
+    }
+
+    nav a {
+        padding: 0.6rem 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2.4rem;
+    }
+
+    address ul {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    section {
+        padding: 2rem 4%;
+    }
+}
+
